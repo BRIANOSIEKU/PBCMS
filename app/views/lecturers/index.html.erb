@@ -1,0 +1,31 @@
+<h1>Lecturers</h1>
+<%= link_to "Add Lecturer", new_lecturer_path, class: "btn btn-primary" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Phone</th>
+      <th>Gender</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lecturers.each do |lecturer| %>
+      <tr>
+        <td><%= lecturer.full_name %></td>
+        <td><%= lecturer.email %></td>
+        <td><%= lecturer.department %></td>
+        <td><%= lecturer.phone %></td>
+        <td><%= lecturer.gender %></td>
+        <td>
+          <%= link_to "Show", lecturer_path(lecturer) %> |
+          <%= link_to "Edit", edit_lecturer_path(lecturer) %> |
+          <%= link_to "Delete", lecturer_path(lecturer), method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

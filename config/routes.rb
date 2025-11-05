@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get "dashboards/lecturer"
   get "dashboards/student"
 
-  # When someone visits "/", go to the Devise login page
+  # Lecturer module routes
+  resources :lecturers
+
+  # Root
   devise_scope :user do
     root to: "devise/sessions#new"
   end

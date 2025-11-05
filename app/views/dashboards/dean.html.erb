@@ -1,2 +1,8 @@
-<h1>Welcome Academic Dean! You can add lecturers and students here.</h1>
-<p>Find me in app/views/dashboards/dean.html.erb</p>
+<h1>Academic Dean Dashboard</h1>
+
+<p>Welcome, <%= current_user.email %></p>
+
+<ul>
+  <li><%= link_to "Manage Lecturers", lecturers_path %></li>
+  <!-- Remove or comment out students link completely until Student module is ready -->
+</ul>
