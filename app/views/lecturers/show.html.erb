@@ -1,0 +1,20 @@
+<h1>Lecturer Details</h1>
+
+<p><strong>Full Name:</strong> <%= @lecturer.full_name %></p>
+<p><strong>ID Number:</strong> <%= @lecturer.id_number %></p>
+<p><strong>Email:</strong> <%= @lecturer.email %></p>
+<p><strong>Phone:</strong> <%= @lecturer.phone %></p>
+<p><strong>Gender:</strong> <%= @lecturer.gender %></p>
+<p><strong>Qualification:</strong> <%= @lecturer.qualification %></p>
+<p><strong>Department:</strong> <%= @lecturer.department %></p>
+<p>
+  <strong>Passport Photo:</strong><br>
+  <% if @lecturer.passport_photo.attached? %>
+    <%= image_tag @lecturer.passport_photo, width: 150 %>
+  <% else %>
+    No photo uploaded
+  <% end %>
+</p>
+
+<%= link_to "Edit", edit_lecturer_path(@lecturer) %> |
+<%= link_to "Back", lecturers_path %>
