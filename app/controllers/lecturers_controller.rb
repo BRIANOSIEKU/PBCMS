@@ -1,7 +1,7 @@
 class LecturersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_academic_dean
-  before_action :set_lecturer, only: [:show, :edit, :update, :destroy]
+  before_action :set_lecturer, only: [ :show, :edit, :update, :destroy ]
 
   # GET /lecturers
   def index
