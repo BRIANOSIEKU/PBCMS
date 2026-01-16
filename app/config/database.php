@@ -1,15 +1,11 @@
 <?php
 $host = "localhost";
-$db   = "pbcms_db"; // database name we created in phpMyAdmin
-$user = "root";     // default XAMPP MySQL user
-$pass = "";         // default XAMPP MySQL password
+$user = "root";
+$password = "";
+$database = "pbcms_db"; 
 
-// Create connection
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($host, $user, $password, $database);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} else {
-    echo " Database connection successful!";
 }
